@@ -251,6 +251,12 @@ button .fas {
   color: #333;
   margin-bottom: 15px;
   display: none;
+  opacity: 0;
+}
+
+#greeting.show {
+  display: block;
+  opacity: 1;
 }
 
 .success-message {

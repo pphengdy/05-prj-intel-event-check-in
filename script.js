@@ -7,6 +7,11 @@ const teamSelect = document.getElementById("teamSelect");
 let count = 0;
 const maxCount = 50;
 
+// Update counter function
+function updateCounter(counter) {
+    counter.textContent = parseInt(counter.textContent) + 1;
+}
+
 // Handle form submission
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -25,7 +30,7 @@ form.addEventListener("submit", function (event) {
   // Update attendee counter
   const attendeeCounter = document.getElementById("attendeeCount");
   if (count <= maxCount) {
-    attendeeCounter.textContent = parseInt(attendeeCounter.textContent) + 1;
+    updateCounter(attendeeCounter);
   }
 
   // Update progress bar percentage
@@ -41,12 +46,16 @@ form.addEventListener("submit", function (event) {
   // Update team counter
   const teamCounter = document.getElementById(team + "Count");
   if (count <= maxCount) {
-    teamCounter.textContent = parseInt(teamCounter.textContent) + 1;
+    updateCounter(teamCounter);
   }
 
-  // Show welcome message
+  // Show personalized greeting message
+  const greeting = document.getElementById("greeting");
   const message = `🎉 Welcome, ${name} from ${teamName}!`;
-  console.log(message);
+  if (greeting && name && teamName) {
+    greeting.textContent = message;
+    greeting.classList.add("show");
+  }
 
   form.reset();
 });
