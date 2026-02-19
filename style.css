@@ -13,16 +13,6 @@ body {
   min-height: 100vh;
 }
 
-/* Add form label styling */
-.form-label {
-  display: block;
-  text-align: left;
-  margin-bottom: 15px;
-  color: #475569;
-  padding-left: 5px;
-  font-weight: 500;
-}
-
 /* Hero Section */
 .hero {
   background: linear-gradient(
@@ -95,6 +85,16 @@ body {
   background-color: #f8fafc;
   border-radius: 16px;
   text-align: center;
+}
+
+/* Add form label styling */
+.form-label {
+  display: block;
+  text-align: left;
+  margin-bottom: 15px;
+  color: #475569;
+  padding-left: 5px;
+  font-weight: 500;
 }
 
 .form-group {
@@ -243,7 +243,7 @@ button .fas {
 }
 
 /* Messages */
-#greeting {
+#greeting, #celebration {
   font-weight: 500;
   font-size: 18px;
   padding: 16px 20px;
@@ -254,7 +254,7 @@ button .fas {
   opacity: 0;
 }
 
-#greeting.show {
+#greeting.show, #celebration.show {
   display: block;
   opacity: 1;
 }
@@ -270,6 +270,60 @@ button .fas {
   font-size: 24px;
   font-weight: 700;
   margin: 0 2px;
+}
+
+/* Attendee list container styled like check-in form */
+.attendee-list-container {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 30px;
+  background-color: #f8fafc;
+  border-radius: 16px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.attendee-list-container h3 {
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.attendee-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.attendee-list li {
+  flex: 1 1 33%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 7px 10px 7px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 33%;
+}
+.attendee-list .team-badge {
+  font-size: 13px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  color: #fff;
+  margin-left: 6px;
+  font-weight: 500;
+}
+.team-badge.water {
+  background: #00b4d8;
+}
+.team-badge.zero {
+  background: #22c55e;
+}
+.team-badge.power {
+  background: #f59e42;
 }
 
 /* Footer */
@@ -346,6 +400,13 @@ select {
 }
 .team-card.power {
   background-color: #fff7ed;
+}
+
+/* Highlight winning team */
+.team-card.winner {
+  border: 3px solid #ffb300;
+  box-shadow: 0 0 16px 2px #ffe082;
+  background-color: #fffbe7 !important;
 }
 
 .team-name {
